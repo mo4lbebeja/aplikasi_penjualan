@@ -22,9 +22,11 @@ class Produk extends Model
     ];
 
     protected $casts = [
-        'aktif' => 'boolean',
         'harga_beli' => 'decimal:2',
         'harga_jual' => 'decimal:2',
+        'stok' => 'integer',
+        'stok_minimum' => 'integer',
+        'aktif' => 'boolean',
     ];
 
     public function kategori()
@@ -35,5 +37,10 @@ class Produk extends Model
     public function satuan()
     {
         return $this->belongsTo(Satuan::class, 'id_satuan');
+    }
+
+    public function detailTransaksi()
+    {
+        return $this->hasMany(DetailTransaksi::class, 'produk_id');
     }
 }

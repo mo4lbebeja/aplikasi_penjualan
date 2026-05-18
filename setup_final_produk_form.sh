@@ -1,3 +1,11 @@
+#!/usr/bin/env bash
+set -e
+
+echo "== Finalisasi form Produk =="
+
+mkdir -p resources/js/pages/Admin/Produk
+
+cat > resources/js/pages/Admin/Produk/Form.vue <<'VUE'
 <script setup lang="ts">
 import AppLayout from '@/layouts/AppLayout.vue';
 import { Link, useForm } from '@inertiajs/vue3';
@@ -218,3 +226,6 @@ function submit() {
         </form>
     </div>
 </template>
+VUE
+
+echo "== Form produk selesai =="

@@ -1,3 +1,11 @@
+#!/usr/bin/env bash
+set -e
+
+echo "== Finalisasi halaman Produk =="
+
+mkdir -p resources/js/pages/Admin/Produk
+
+cat > resources/js/pages/Admin/Produk/Index.vue <<'VUE'
 <script setup lang="ts">
 import AppLayout from '@/layouts/AppLayout.vue';
 import { Link, router, useForm } from '@inertiajs/vue3';
@@ -297,3 +305,6 @@ function hapus(item: any) {
         </section>
     </div>
 </template>
+VUE
+
+echo "== Halaman index produk selesai =="
